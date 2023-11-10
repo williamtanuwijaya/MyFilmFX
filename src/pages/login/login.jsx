@@ -1,48 +1,67 @@
-import React from "react";
-import InputTextMessage from "../../components/text-field/inputTextField";
-import Container from '@mui/material/Container';
-import CssBaseline from '@mui/material/CssBaseline';
+import React, {useState} from "react";
+import { Link } from "react-router-dom";
+import logo from "../../assets/tmovie.png";
+import "./login.css";
 
+const Login = () => {
+ const [email, setEmail] = useState();
+ const [password, setPassword] = useState();
 
+  return (
+    <body>
+      <div class="containerInduk">
+        <div class="containerHeader">
+          <img src={logo} alt="" class="logo" />
+          <h2>MyFilmFx</h2>
+        </div>
 
+        <form action="action_page.php" class="form_login">
+          <div class="container_login">
+            <div className="judul">
+              <h1>Log In</h1>
+            </div>
 
-function HalamanLogin() {
-  
-    return (
-      <React.Fragment>
-        <CssBaseline />
-        <Container maxWidth="sm">
-        <InputTextMessage 
-          id="Username"
-          label="User Name"
-          variant="outlined"
-          fullwidth
-          required
-          margin="normal"
-          autofocus
-          name="username"
-          type="text"
-        />
-        
-        <InputTextMessage
-          id="password"
-          label="Password"
-          variant="outlined"
-          fullwidth
-          required
-          margin="normal"
-          autofocus
-          name="password"
-          type="password"
-        />
-        </Container>
-      </React.Fragment>
-    );
-  
-}
+            <hr />
+            <label for="email">
+              <b>Email</b>
+            </label>
+            <input
+              type="text"
+              placeholder="Enter Email"
+              name="email"
+              id="email"
+              required
+            ></input>
 
-export default HalamanLogin;
+            <label for="psw">
+              <b>Password</b>
+            </label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              name="psw"
+              id="psw"
+              required
+            ></input>
 
+           
+            <hr />
+            <button type="submit" class="registerbtn">
+              Login
+            </button>
+          </div>
 
+          <div class="container signin">
+            <p>
+              Belum Memiliki Akun? <a href="/register">Register</a>.
+            </p>
+          </div>
+        </form>
+      </div>
+    </body>
+  );
+};
+
+export default Login;
 
 
