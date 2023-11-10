@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/tmovie.png";
-import "./login.css";
+import "./register.css";
 
-const Login = () => {
- const [email, setEmail] = useState();
- const [password, setPassword] = useState();
+const Register = () => {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
 
   return (
     <body>
@@ -18,18 +18,29 @@ const Login = () => {
         <form action="action_page.php" class="form_login">
           <div class="container_login">
             <div className="judul">
-              <h1>Log In</h1>
+              <h1>Register</h1>
             </div>
 
             <hr />
             <label for="email">
+              <b>Email</b>
+            </label>
+            <input
+              type="text"
+              placeholder="Enter Email"
+              name="email"
+              id="email"
+              required
+            ></input>
+
+            <label for="username">
               <b>Username</b>
             </label>
             <input
               type="text"
               placeholder="Enter Username"
-              name="email"
-              id="email"
+              name="username"
+              id="username"
               required
             ></input>
 
@@ -43,25 +54,27 @@ const Login = () => {
               id="psw"
               required
             ></input>
-
-           
+            <label for="psw">
+              <b>Konfirmasi Password</b>
+            </label>
+            <input
+              type="password"
+              placeholder="Konfirmasi Password"
+              name="psw"
+              id="psw"
+              required
+            />
             <hr />
             <button type="submit" class="registerbtn">
-              Login
+              Register
             </button>
           </div>
 
-          <div class="container signin">
-            <p>
-              Belum Memiliki Akun? <a href="/register">Register</a>.
-            </p>
-          </div>
+          
         </form>
       </div>
     </body>
   );
 };
 
-export default Login;
-
-
+export default Register;
