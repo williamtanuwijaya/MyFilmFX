@@ -5,7 +5,17 @@ import "./register.css";
 
 const Register = () => {
   const [email, setEmail] = useState();
+  const [username, setUsername] = useState();
   const [password, setPassword] = useState();
+  const [knfr_psw, setKnfr_psw] = useState();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(`Email : ${email}`);
+    console.log(`Username : ${username}`);
+    console.log(`Password : ${password}`);
+    console.log(`Konfirmasi Password : ${knfr_psw}`);
+  }
 
   return (
     <body>
@@ -15,7 +25,7 @@ const Register = () => {
           <h2>MyFilmFx</h2>
         </div>
 
-        <form action="action_page.php" class="form_login">
+        <form onSubmit={handleSubmit} class="form_login">
           <div class="container_login">
             <div className="judul">
               <h1>Register</h1>
@@ -30,6 +40,8 @@ const Register = () => {
               placeholder="Enter Email"
               name="email"
               id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             ></input>
 
@@ -41,6 +53,8 @@ const Register = () => {
               placeholder="Enter Username"
               name="username"
               id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               required
             ></input>
 
@@ -52,6 +66,8 @@ const Register = () => {
               placeholder="Enter Password"
               name="psw"
               id="psw"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               required
             ></input>
             <label for="psw">
@@ -60,8 +76,10 @@ const Register = () => {
             <input
               type="password"
               placeholder="Konfirmasi Password"
-              name="psw"
-              id="psw"
+              name="knfr_psw"
+              id="knfr_psw"
+              value={knfr_psw}
+              onChange={(e) => setKnfr_psw(e.target.value)}
               required
             />
             <hr />
@@ -69,8 +87,6 @@ const Register = () => {
               Register
             </button>
           </div>
-
-          
         </form>
       </div>
     </body>
