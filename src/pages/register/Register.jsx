@@ -32,7 +32,7 @@ const Register = () => {
             </div>
 
             <hr />
-            <label for="email">
+            <label htmlFor="email">
               <b>Email</b>
             </label>
             <input
@@ -45,7 +45,7 @@ const Register = () => {
               required
             ></input>
 
-            <label for="username">
+            <label htmlFor="username">
               <b>Username</b>
             </label>
             <input
@@ -58,7 +58,7 @@ const Register = () => {
               required
             ></input>
 
-            <label for="psw">
+            <label htmlFor="psw">
               <b>Password</b>
             </label>
             <input
@@ -70,7 +70,7 @@ const Register = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             ></input>
-            <label for="psw">
+            <label htmlFor="knfr_psw">
               <b>Konfirmasi Password</b>
             </label>
             <input
@@ -87,6 +87,11 @@ const Register = () => {
               Register
             </button>
           </div>
+          <div className="container signin">
+            <p>
+              Sudah Memiliki Akun? <a href="/register">Log In</a>.
+            </p>
+            </div>
         </form>
       </div>
     </body>

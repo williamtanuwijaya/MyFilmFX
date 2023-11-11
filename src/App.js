@@ -13,26 +13,35 @@ import Register from "./pages/register/Register";
 
 function App() {
 
-  const [currentForm, setCurrentForm] = useState('Register');
+  const [currentForm, setCurrentForm] = useState('');
 
+  if(currentForm === "Login"){
+    return <Login/>
+  }
 
-  return (
-    currentForm === "Login"? <Login/> : <Register/> 
+  else if(currentForm === "Register"){
+    return <Register/>
+  }
 
-    // <BrowserRouter>
-    //   <Route
-    //     render={(props) => (
-    //       <>
-    //         <Header {...props} />
-    //         <Routes />
-    //         <Footer />
-    //       </>
-    //     )}
-    //   />
-    // </BrowserRouter>
-    
+  else{
+    return (
+      <BrowserRouter>
+        <Route
+          render={(props) => (
+            <>
+              <Header {...props} />
+              <Routes />
+              <Footer />
+            </>
+          )}
+        />
+      </BrowserRouter>
+    );
+  }
+
+  
    
-  );
+
 }
 
 export default App;

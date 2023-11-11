@@ -28,7 +28,7 @@ const Login = () => {
             </div>
 
             <hr />
-            <label for="email">
+            <label htmlFor="email">
               <b>Username</b>
             </label>
             <input
@@ -41,7 +41,7 @@ const Login = () => {
               required
             ></input>
 
-            <label for="psw">
+            <label htmlFor="psw">
               <b>Password</b>
             </label>
             <input
