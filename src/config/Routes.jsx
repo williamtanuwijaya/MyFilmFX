@@ -10,10 +10,11 @@ import Login from "../pages/login/Login";
 const Routes = () => {
   return (
     <Switch>
-      <Route path="/:category/search/:keyword" component={Catalog} />
-      <Route path="/:category/:id" component={Detail} />
-      <Route path="/:category" component={Catalog} />
+      <Route path="/search/:category/:keyword" component={Catalog} />
+      <Route path="/detail/:category/:id" component={Detail} />
+      <Route path="/category/:category" component={Catalog} />
       <Route path="/" exact component={Home} />
+      <Route path="/login" component={Login} />
     </Switch>
   );
 };
