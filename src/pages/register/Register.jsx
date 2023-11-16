@@ -15,6 +15,33 @@ const Register = () => {
     console.log(`Username : ${username}`);
     console.log(`Password : ${password}`);
     console.log(`Konfirmasi Password : ${knfr_psw}`);
+
+    //or simpan data ke local storage
+    localStorage.setItem("userEmail", email);
+    localStorage.setItem("userUsername", username);
+    localStorage.setItem("userPassword", password);
+    localStorage.setItem("userKnfr_psw", knfr_psw);
+
+
+    //pengecekan password dan konfirmasi password
+    if(password === knfr_psw) {
+      alert('Match');
+    }else {
+      alert('Not Match!!!!!!!')
+    }
+
+
+    //mendapatkan data dari local storage
+    React.useEffect(() => {
+      const saveEmail = localStorage.getItem("userEmail");
+      const saveUsername = localStorage.getItem("userUsername");
+      const savePassword = localStorage.getItem("userPassword");
+      const saveKnfr_psw = localStorage.getItem("userKnfr_psw");
+
+      if(saveEmail) {
+        setEmail(saveEmail);
+      }
+    })
   }
 
   return (
@@ -89,9 +116,9 @@ const Register = () => {
           </div>
           <div className="container signin">
             <p>
-              Sudah Memiliki Akun? <a href="/register">Log In</a>.
+              Sudah Memiliki Akun? <a href="/login">Log In</a>.
             </p>
-            </div>
+          </div>
         </form>
       </div>
     </body>

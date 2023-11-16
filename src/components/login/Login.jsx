@@ -59,7 +59,7 @@ const Login = () => {
 
           <div class="container signin">
             <p>
-              Belum Memiliki Akun? <a href="#">Register</a>.
+              Belum Memiliki Akun? <a href="/register">Register</a>.
             </p>
           </div>
         </form>

@@ -10,6 +10,20 @@ const Login = () => {
     e.preventDefault();
     console.log(`Username : ${username}`);
     console.log(`Password : ${password}`);
+
+
+    // //menyimpan data ke local storage
+    // localStorage.setItem('setUsername', username);
+    // localStorage.setItem('setPassword', password);
+
+    // //or simpan data ke local storage
+    // localStorage.setItem('setUsername',this.useState.username);
+    // localStorage.setItem('setPassword',this.useState.password);
+
+    // //mendapatkan data dari local storage
+    // const setUsername = localStorage.getItem('setUsername');
+    // const setPassword = localStorage.getItem('setPassword');
+
   }
 
   return (

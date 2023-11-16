@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import Catalog from "../pages/Catalog";
 import Detail from "../pages/detail/Detail";
 import Login from "../pages/login/Login";
+import Register from "../pages/register/Register";
 
 const Routes = () => {
   return (
@@ -15,6 +16,7 @@ const Routes = () => {
       <Route path="/category/:category" component={Catalog} />
       <Route path="/" exact component={Home} />
       <Route path="/login" component={Login} />
+      <Route path="/register" component={Register} />
     </Switch>
   );
 };
