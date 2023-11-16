@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/tmovie.png";
 import "./register.css";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const Register = () => {
   const [email, setEmail] = useState();
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
   const [knfr_psw, setKnfr_psw] = useState();
+  const history = useHistory();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -24,25 +26,36 @@ const Register = () => {
 
 
     //pengecekan password dan konfirmasi password
-    if(password === knfr_psw) {
-      alert('Match');
-    }else {
-      alert('Not Match!!!!!!!')
+    if(password === '' || knfr_psw === '') {
+      alert('Mohon isi kedua kolom password');
+    }else if(password !== knfr_psw){
+      alert('Password tidak cocok')
+    }else{
+      alert('Berhasil')
+      history.push('/login');
     }
-
-
-    //mendapatkan data dari local storage
-    React.useEffect(() => {
-      const saveEmail = localStorage.getItem("userEmail");
-      const saveUsername = localStorage.getItem("userUsername");
-      const savePassword = localStorage.getItem("userPassword");
-      const saveKnfr_psw = localStorage.getItem("userKnfr_psw");
-
-      if(saveEmail) {
-        setEmail(saveEmail);
-      }
-    })
   }
+
+  //mendapatkan data dari local storage
+  React.useEffect(() => {
+    const savedEmail = localStorage.getItem("userEmail");
+    const savedUsername = localStorage.getItem("userUsername");
+    const savedPassword = localStorage.getItem("userPassword");
+    const savedKnfr_psw = localStorage.getItem("userKnfr_psw");
+
+    if(savedEmail) {
+      setEmail(savedEmail);
+    }
+    if(savedUsername) {
+      setUsername(savedUsername);
+    }
+    if(savedPassword) {
+      setPassword(savedPassword);
+    }
+    if(savedKnfr_psw) {
+      setKnfr_psw(savedKnfr_psw);
+    }
+  }, []);
 
   return (
     <body>

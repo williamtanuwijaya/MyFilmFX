@@ -1,29 +1,30 @@
-import React, { useState } from 'react';
-import logo from '../../assets/tmovie.png';
-import './login.css';
+import React, { useState } from "react";
+import logo from "../../assets/tmovie.png";
+import "./login.css";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const Login = () => {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
+  const history = useHistory();
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(`Username : ${username}`);
-    console.log(`Password : ${password}`);
+    console.log(`Username : ${username}`);    
+    console.log(`Password : ${password}`);    
 
+    const savedEmail = localStorage.getItem("userEmail");
+    const savedUsername = localStorage.getItem("userUUsername");
+    const savedPassword = localStorage.getItem("userPassword");
 
-    // //menyimpan data ke local storage
-    // localStorage.setItem('setUsername', username);
-    // localStorage.setItem('setPassword', password);
-
-    // //or simpan data ke local storage
-    // localStorage.setItem('setUsername',this.useState.username);
-    // localStorage.setItem('setPassword',this.useState.password);
-
-    // //mendapatkan data dari local storage
-    // const setUsername = localStorage.getItem('setUsername');
-    // const setPassword = localStorage.getItem('setPassword');
-
+    if ((savedUsername === username) && savedPassword === password) {
+      // Autentikasi berhasil
+      alert('Login berhasil!');
+      history.push('/');
+    } else {
+      // Autentikasi gagal
+      alert('Email/Username atau Password salah. Silakan coba lagi.');
+    }
   }
 
   return (
@@ -43,12 +44,28 @@ const Login = () => {
           <label htmlFor="email">
             <b>Username</b>
           </label>
-          <input type="text" placeholder="Enter Username" name="email" id="email" value={username} onChange={(e) => setUsername(e.target.value)} required></input>
+          <input
+            type="text"
+            placeholder="Enter Username"
+            name="email"
+            id="email"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          ></input>
 
           <label htmlFor="psw">
             <b>Password</b>
           </label>
-          <input type="password" placeholder="Enter Password" name="psw" id="psw" value={password} onChange={(e) => setPassword(e.target.value)} required></input>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            name="psw"
+            id="psw"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          ></input>
 
           <hr />
           <button type="submit" className="registerbtn">
