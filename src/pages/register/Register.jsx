@@ -18,6 +18,7 @@ const Register = () => {
     console.log(`Password : ${password}`);
     console.log(`Konfirmasi Password : ${knfr_psw}`);
 
+    
     //or simpan data ke local storage
     localStorage.setItem("userEmail", email);
     localStorage.setItem("userUsername", username);
@@ -43,18 +44,19 @@ const Register = () => {
     const savedPassword = localStorage.getItem("userPassword");
     const savedKnfr_psw = localStorage.getItem("userKnfr_psw");
 
-    if(savedEmail) {
-      setEmail(savedEmail);
-    }
-    if(savedUsername) {
-      setUsername(savedUsername);
-    }
-    if(savedPassword) {
-      setPassword(savedPassword);
-    }
-    if(savedKnfr_psw) {
-      setKnfr_psw(savedKnfr_psw);
-    }
+    // if(savedEmail) {
+    //   setEmail(savedEmail);
+    // }
+    // if(savedUsername) {
+    //   setUsername(savedUsername);
+    // }
+    // if(savedPassword) {
+    //   setPassword(savedPassword);
+    // }
+    // if(savedKnfr_psw) {
+    //   setKnfr_psw(savedKnfr_psw);
+    // }
+    
   }, []);
 
   return (

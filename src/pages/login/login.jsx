@@ -10,20 +10,19 @@ const Login = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(`Username : ${username}`);    
-    console.log(`Password : ${password}`);    
+    // console.log(`Username : ${username}`);
+    // console.log(`Password : ${password}`);
 
-    const savedEmail = localStorage.getItem("userEmail");
-    const savedUsername = localStorage.getItem("userUUsername");
+    const savedUsername = localStorage.getItem("userUsername");
     const savedPassword = localStorage.getItem("userPassword");
 
-    if ((savedUsername === username) && savedPassword === password) {
+    if (savedUsername === username && savedPassword === password) {
       // Autentikasi berhasil
-      alert('Login berhasil!');
-      history.push('/');
+      alert("Login berhasil!");
+      history.push("/");
     } else {
       // Autentikasi gagal
-      alert('Email/Username atau Password salah. Silakan coba lagi.');
+      alert("Email/Username atau Password salah. Silakan coba lagi.");
     }
   }
 
