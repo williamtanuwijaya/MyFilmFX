@@ -19,7 +19,7 @@ const Login = () => {
     if (savedUsername === username && savedPassword === password) {
       // Autentikasi berhasil
       alert("Login berhasil!");
-      history.push("/");
+      history.push("/home");
     } else {
       // Autentikasi gagal
       alert("Email/Username atau Password salah. Silakan coba lagi.");

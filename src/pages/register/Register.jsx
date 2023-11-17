@@ -18,12 +18,6 @@ const Register = () => {
     console.log(`Password : ${password}`);
     console.log(`Konfirmasi Password : ${knfr_psw}`);
 
-    //or simpan data ke local storage
-    localStorage.setItem("userEmail", email);
-    localStorage.setItem("userUsername", username);
-    localStorage.setItem("userPassword", password);
-    localStorage.setItem("userKnfr_psw", knfr_psw);
-
     //pengecekan password dan konfirmasi password
     if (password === "" || knfr_psw === "") {
       alert("Mohon isi kedua kolom password");
@@ -33,6 +27,12 @@ const Register = () => {
       alert("Berhasil");
       history.push("/login");
     }
+
+    //or simpan data ke local storage
+    localStorage.setItem("userEmail", email);
+    localStorage.setItem("userUsername", username);
+    localStorage.setItem("userPassword", password);
+    localStorage.setItem("userKnfr_psw", knfr_psw);
   }
 
   //mendapatkan data dari local storage
