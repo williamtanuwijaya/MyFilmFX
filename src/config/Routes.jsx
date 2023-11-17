@@ -14,9 +14,9 @@ const Routes = () => {
       <Route path="/search/:category/:keyword" component={Catalog} />
       <Route path="/detail/:category/:id" component={Detail} />
       <Route path="/category/:category" component={Catalog} />
-      <Route path="/" exact component={Home} />
-      <Route path="/login" component={Login} />
+      <Route path="/home" exact component={Home} />
       <Route path="/register" component={Register} />
+      <Route path="/" component={Login} />
     </Switch>
   );
 };
