@@ -19,7 +19,7 @@ function App() {
       if (token) {
         setIsLoggedIn(true);
       } else {
-        setIsLoggedIn(false);
+        setIsLoggedIn(true);
       }
     };
 
