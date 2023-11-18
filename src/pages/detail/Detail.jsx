@@ -9,6 +9,8 @@ import CastList from './CastList';
 import VideoList from './VideoList';
 
 import MovieList from '../../components/movie-list/MovieList';
+import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
 
 const Detail = () => {
   const { category, id } = useParams();
@@ -26,6 +28,7 @@ const Detail = () => {
 
   return (
     <>
+    <Header/>
       {item && (
         <>
           <div className="banner" style={{ backgroundImage: `url(${apiConfig.originalImage(item.backdrop_path || item.poster_path)})` }}></div>
@@ -65,7 +68,9 @@ const Detail = () => {
           </div>
         </>
       )}
+      <Footer/>
     </>
+    
   );
 };
 

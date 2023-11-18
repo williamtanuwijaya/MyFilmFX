@@ -1,15 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import { OutlineButton } from '../components/button/Button';
-import HeroSlide from '../components/hero-slide/HeroSlide';
-import MovieList from '../components/movie-list/MovieList';
+import { OutlineButton } from "../components/button/Button";
+import HeroSlide from "../components/hero-slide/HeroSlide";
+import MovieList from "../components/movie-list/MovieList";
 
-import { category, movieType, tvType } from '../api/tmdbApi';
+import { category, movieType, tvType } from "../api/tmdbApi";
+import Header from "../components/header/Header";
+import Footer from "../components/footer/Footer";
 
 const Home = () => {
+  // const isAuthenticated = localStorage.getItem("accessToken");
+  // console.log(isAuthenticated);
+  // if (!isAuthenticated) {
+  //   console.log("belum login");
+  // }
   return (
     <>
+      <Header />
       <HeroSlide />
       <div className="container">
         <div className="section mb-3">
@@ -52,6 +60,7 @@ const Home = () => {
           <MovieList category={category.tv} type={tvType.top_rated} />
         </div>
       </div>
+      <Footer />
     </>
   );
 };
