@@ -1,4 +1,4 @@
-@use '../../scss/' as *;
+@use "../../scss/" as *;
 
 .logo {
   font-size: 2.5rem;
@@ -17,6 +17,9 @@
   }
 }
 
+.logout-button {
+  
+}
 .header {
   height: $header-height;
   position: fixed;
@@ -55,7 +58,7 @@
       font-size: 1.5rem;
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 0;
         left: 50%;

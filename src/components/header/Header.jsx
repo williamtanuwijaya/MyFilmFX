@@ -48,6 +48,15 @@ const Header = () => {
     };
   }, []);
 
+  const handleLogout = (e) => {
+    e.preventDefault();
+    const confirmLogout = window.confirm("Apakah Anda yakin ingin logout?");
+    if (confirmLogout) {
+      localStorage.removeItem("accessToken");
+      window.location.href = "/";
+    }
+  };
+
   return (
     <div ref={headerRef} className="header">
       <div className="header__wrap container">
@@ -58,7 +67,11 @@ const Header = () => {
         <ul className="header__nav">
           {headerNav.map((e, i) => (
             <li key={i} className={`${i === active ? "active" : ""}`}>
-              <Link to={e.path}>{e.display}</Link>
+              {e.display === "Logout" ? (
+               <Link to={e.path} onClick={handleLogout}>{e.display}</Link>
+              ) : (
+                <Link to={e.path}>{e.display}</Link>
+              )}
             </li>
           ))}
         </ul>
